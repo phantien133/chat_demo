@@ -1,0 +1,15 @@
+<div style="width: 100%;">
+  <div class="message-content">
+    <%= render @messages %>
+  </div>
+  <div class="message-form">
+    <%= form_for @message, html: {remote: true, id: "message-form"} do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :content %>
+      <%= f.text_area :content, rows: 5, cols: 100 %>
+      <%= hidden_field_tag :last_id, @last_id %>
+      <%= f.submit :send %>
+    <% end %>
+  </div>
+</div>

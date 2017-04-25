@@ -1,0 +1,3 @@
+<% if @messages&.any? %>
+  appendMessages("<%= j render @messages %>", <%= @last_id %>);
+<% end %>
